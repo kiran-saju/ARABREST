@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
@@ -19,7 +19,7 @@
             overflow-x: hidden;
         }
 
-        /* Header Styles */
+        /* Header */
         header {
             position: fixed;
             top: 0;
@@ -32,8 +32,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
-            box-sizing: border-box;
+            transition: all 0.3s ease;
         }
 
         .logo {
@@ -44,10 +43,6 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-        }
-
-        .logo i {
-            font-size: 2rem;
         }
 
         .nav-links {
@@ -107,7 +102,7 @@
         }
 
         /* Hero Section */
-        #property-hero {
+        #hero {
             position: relative;
             width: 100%;
             height: 100vh;
@@ -142,21 +137,11 @@
             opacity: 0;
             background-size: cover;
             background-position: center;
-            transition: opacity 1.5s ease-in-out;
-            animation: zoomEffect 20s infinite alternate;
+            transition: opacity 1.5s ease;
         }
 
         .bg-slide.active {
             opacity: 1;
-        }
-
-        @keyframes zoomEffect {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.1);
-            }
         }
 
         .bg-overlay {
@@ -174,13 +159,9 @@
             z-index: 3;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 2rem 20px;
+            padding: 0 2rem;
             width: 100%;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: calc(100vh - 80px);
         }
 
         .hero-title {
@@ -189,9 +170,6 @@
             margin-bottom: 1.5rem;
             line-height: 1.2;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            padding-top: 10px;
-            word-wrap: break-word;
         }
 
         .hero-divider {
@@ -203,7 +181,7 @@
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
             margin-bottom: 3rem;
             opacity: 0.9;
             max-width: 800px;
@@ -214,300 +192,155 @@
 
         .hero-stats {
             display: flex;
-            gap: clamp(3rem, 5vw, 6rem);
+            gap: clamp(2rem, 5vw, 4rem);
             margin-top: 3rem;
             flex-wrap: wrap;
             justify-content: center;
-            padding-bottom: 20px;
         }
 
         .stat-item {
             text-align: center;
             padding: 1.5rem;
-            min-width: 180px;
+            min-width: 140px;
         }
 
         .stat-number {
             font-size: clamp(2.5rem, 4vw, 3.5rem);
             font-weight: 800;
             color: #c19a5b;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            justify-content: center;
             margin-bottom: 0.5rem;
         }
 
-        .stat-number .counter {
-            font-size: clamp(3rem, 4.5vw, 4rem);
-        }
-
         .stat-label {
-            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            font-size: clamp(0.9rem, 1.5vw, 1.2rem);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             opacity: 0.9;
             font-weight: 500;
         }
-/* Business Divisions */
-#business-divisions {
-    padding: 6rem 5%;
-    background: #0a0a0a;
-    overflow: hidden; /* Prevent any overflow from the section */
-}
 
-.section-title {
-    text-align: center;
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    color: #fff;
-    position: relative;
-    padding-bottom: 1rem;
-}
+        /* Business Divisions */
+        #business-divisions {
+            padding: 6rem 5%;
+            background: #0a0a0a;
+        }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 4px;
-    background: #c19a5b;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            position: relative;
+            padding-bottom: 1rem;
+        }
 
-.section-subtitle {
-    text-align: center;
-    color: #aaa;
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: #c19a5b;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-.tall-divisions-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    align-items: stretch; /* Ensure all cards stretch equally */
-}
+        .section-subtitle {
+            text-align: center;
+            color: #aaa;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
 
-.tall-division-card {
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    height: 500px;
-    min-width: 0;
-    transition: all 0.4s ease;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: flex-end;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-sizing: border-box; /* Include border in height calculation */
-}
+        .divisions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.tall-division-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    border-color: rgba(193, 154, 91, 0.3);
-    z-index: 2;
-}
+        .division-card {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 450px;
+            transition: all 0.4s ease;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-/* Background images with better containment */
-.real-estate-tall {
-    background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.95) 100%), 
-                      url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=800&q=80');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+        .division-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border-color: rgba(193, 154, 91, 0.3);
+        }
 
-.healthcare-tall {
-    background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.95) 100%), 
-                      url('https://images.unsplash.com/photo-1722235623200-59966a71af50?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+        .division-overlay {
+            padding: 2rem 1.5rem;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+            position: relative;
+            z-index: 2;
+        }
 
-.manufacturing-tall {
-    background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.95) 100%), 
-                      url('https://images.unsplash.com/photo-1735020886196-bed638cc1809?q=80&w=782&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+        .division-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
 
-.diamonds-tall {
-    background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.95) 100%), 
-                      url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=800&q=80');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+        .division-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            font-weight: 700;
+            line-height: 1.3;
+        }
 
-.tall-division-overlay {
-    padding: 2rem 1.5rem;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
-    position: relative;
-    z-index: 2;
-    box-sizing: border-box;
-    margin-top: auto; /* Push overlay to bottom */
-}
+        .division-desc {
+            color: #ddd;
+            line-height: 1.5;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
 
-.tall-division-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
-}
+        .division-tags {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
 
-.real-estate-tall .tall-division-icon {
-    border-color: #c19a5b;
-    background: rgba(193, 154, 91, 0.2);
-}
+        .tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
 
-.healthcare-tall .tall-division-icon {
-    border-color: #e74c3c;
-    background: rgba(231, 76, 60, 0.2);
-}
-
-.manufacturing-tall .tall-division-icon {
-    border-color: #3498db;
-    background: rgba(52, 152, 219, 0.2);
-}
-
-.diamonds-tall .tall-division-icon {
-    border-color: #8e44ad;
-    background: rgba(142, 68, 173, 0.2);
-}
-
-.tall-division-card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    color: #fff;
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-.tall-division-desc {
-    color: #ddd;
-    line-height: 1.5;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
-    min-height: 48px;
-    max-height: 72px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limit to 3 lines */
-    -webkit-box-orient: vertical;
-}
-
-.tall-division-tags {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    margin-top: auto; /* Push tags to bottom */
-}
-
-.tall-tag {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    text-align: center;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-    min-height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    word-break: break-word;
-}
-
-.tall-division-card:hover .tall-tag {
-    transform: translateX(5px);
-    border-color: rgba(193, 154, 91, 0.3);
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .tall-divisions-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
-    }
-    
-    .tall-division-card {
-        height: 450px;
-    }
-}
-
-@media (max-width: 768px) {
-    #business-divisions {
-        padding: 4rem 5%;
-    }
-    
-    .section-title {
-        font-size: 2.2rem;
-    }
-    
-    .tall-divisions-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        max-width: 500px;
-    }
-    
-    .tall-division-card {
-        height: 400px;
-    }
-    
-    .tall-division-overlay {
-        padding: 1.5rem 1.2rem;
-    }
-    
-    .tall-division-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-    
-    .tall-division-card h3 {
-        font-size: 1.4rem;
-    }
-    
-    .tall-division-desc {
-        font-size: 0.95rem;
-        margin-bottom: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .tall-division-card {
-        height: 380px;
-    }
-    
-    .tall-division-overlay {
-        padding: 1.2rem 1rem;
-    }
-}
+        .division-card:hover .tag {
+            transform: translateX(5px);
+            border-color: rgba(193, 154, 91, 0.3);
+        }
 
         /* Contact Section */
         #contact {
@@ -517,65 +350,121 @@
 
         .contact-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            max-width: 1400px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .contact-info h3 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
             color: #fff;
         }
 
         .contact-details {
-            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
 
         .contact-detail {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 1.2rem;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .contact-detail i {
             color: #c19a5b;
-            font-size: 1.5rem;
-            width: 40px;
+            font-size: 1.3rem;
+            width: 30px;
+            margin-top: 5px;
+        }
+
+        .contact-detail-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #c19a5b;
+        }
+
+        .contact-detail-content p {
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        /* Social Media */
+        .social-media {
+            margin-top: 2rem;
+        }
+
+        .social-media h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: #c19a5b;
+            transform: translateY(-3px);
         }
 
         .contact-form {
             background: #1a1a1a;
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 8px;
         }
 
         .form-group {
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             color: #fff;
+            font-weight: 500;
         }
 
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 1rem;
+            padding: 0.9rem;
             background: #222;
             border: 1px solid #333;
             border-radius: 4px;
             color: #fff;
             font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #c19a5b;
         }
 
         .form-group textarea {
-            height: 150px;
+            height: 120px;
             resize: vertical;
         }
 
@@ -583,7 +472,7 @@
             background: #c19a5b;
             color: #000;
             border: none;
-            padding: 1.2rem 2.5rem;
+            padding: 1rem 2rem;
             font-size: 1.1rem;
             font-weight: 600;
             border-radius: 4px;
@@ -594,104 +483,31 @@
 
         .btn-submit:hover {
             background: #d4af6a;
+            transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
             background: #080808;
-            padding: 4rem 5% 2rem;
+            padding: 3rem 5%;
+            text-align: center;
         }
 
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            max-width: 1400px;
+        .footer-content {
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #c19a5b;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .footer-desc {
-            color: #aaa;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.2rem;
-        }
-
-        .social-links a {
-            color: #fff;
-            font-size: 1.3rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #c19a5b;
-        }
-
-        .footer-heading {
-            font-size: 1.5rem;
-            margin-bottom: 1.8rem;
-            color: #fff;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #c19a5b;
-        }
-
         .copyright {
-            text-align: center;
-            padding-top: 3rem;
-            margin-top: 3rem;
-            border-top: 1px solid #333;
             color: #777;
             font-size: 0.9rem;
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            margin-top: 2rem;
         }
 
         /* Responsive */
-        @media (max-width: 1200px) {
-            .tall-divisions-grid {
-                grid-template-columns: repeat(2, 1fr);
-                max-width: 800px;
-            }
-            
-            .tall-division-card {
-                height: 450px;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-        }
-
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .mobile-menu-btn {
                 display: block;
             }
@@ -717,41 +533,47 @@
             .btn-contact {
                 display: none;
             }
+        }
 
-            #property-hero {
-                height: auto;
-                min-height: auto;
+        @media (max-width: 768px) {
+            #hero {
                 padding: 100px 0 60px;
+                height: auto;
+                min-height: 80vh;
             }
 
             .hero-content {
-                min-height: auto;
-                padding: 20px 1rem;
+                padding: 0 1rem;
             }
 
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
             .hero-stats {
-                gap: 2rem;
+                gap: 1.5rem;
             }
-            
-            .tall-divisions-grid {
+
+            .stat-item {
+                padding: 1rem;
+                min-width: 120px;
+            }
+
+            .divisions-grid {
                 grid-template-columns: 1fr;
                 max-width: 500px;
             }
-            
-            .tall-division-card {
+
+            .division-card {
                 height: 400px;
             }
 
             .section-title {
                 font-size: 2.2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .contact-info h3 {
+                font-size: 2rem;
             }
         }
 
@@ -760,21 +582,22 @@
                 font-size: 2rem;
             }
             
-            .hero-stats {
-                gap: 1.5rem;
+            .hero-subtitle {
+                font-size: 1.1rem;
             }
             
-            .stat-item {
-                padding: 1rem;
-                min-width: 140px;
-            }
-            
-            .tall-division-card {
+            .division-card {
                 height: 380px;
             }
             
-            .tall-division-overlay {
+            .division-overlay {
                 padding: 1.5rem;
+            }
+            
+            .social-icons a {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -791,7 +614,7 @@
         </div>
         
         <ul class="nav-links">
-            <li><a href="#property-hero">Home</a></li>
+            <li><a href="#hero">Home</a></li>
             <li><a href="#business-divisions">Divisions</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -802,45 +625,41 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="property-hero">
-        <!-- Background Slideshow -->
+    <section id="hero">
         <div class="hero-bg">
             <div class="bg-slideshow">
-                <div class="bg-slide active" style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');"></div>
-                <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');"></div>
-                <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');"></div>
-                <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80');"></div>
+                <div class="bg-slide active" style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80')"></div>
+                <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80')"></div>
             </div>
             <div class="bg-overlay"></div>
         </div>
         
-        <!-- Content -->
         <div class="hero-content">
             <h1 class="hero-title">BIN ARAB GROUP</h1>
             <div class="hero-divider"></div>
             <p class="hero-subtitle">
                 A Premier UAE-Based Diversified Conglomerate<br>
-                Delivering excellence across real estate, healthcare, manufacturing, and luxury fashion.
+                Delivering excellence across real estate, healthcare, and manufacturing.
             </p>
             
             <div class="hero-stats">
                 <div class="stat-item">
                     <div class="stat-number">
-                        <span class="counter" data-target="15">0</span><span>+</span>
+                        <span class="counter" data-target="15">0</span>+
                     </div>
                     <div class="stat-label">Years Experience</div>
                 </div>
                 
                 <div class="stat-item">
                     <div class="stat-number">
-                        <span class="counter" data-target="4">0</span>
+                        <span class="counter" data-target="3">0</span>
                     </div>
                     <div class="stat-label">Business Divisions</div>
                 </div>
                 
                 <div class="stat-item">
                     <div class="stat-number">
-                        <span class="counter" data-target="98">0</span><span>%</span>
+                        <span class="counter" data-target="98">0</span>%
                     </div>
                     <div class="stat-label">Client Satisfaction</div>
                 </div>
@@ -855,67 +674,51 @@
             Bin Arab Group operates multiple specialized divisions, each delivering excellence in their respective sectors.
         </p>
         
-        <div class="tall-divisions-grid">
+        <div class="divisions-grid">
             <!-- Real Estate -->
-            <div class="tall-division-card real-estate-tall">
-                <div class="tall-division-overlay">
-                    <div class="tall-division-icon">
+            <div class="division-card" style="background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.95) 100%), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=800&q=80')">
+                <div class="division-overlay">
+                    <div class="division-icon">
                         <i class="fas fa-building"></i>
                     </div>
                     <h3>Real Estate</h3>
-                    <p class="tall-division-desc">Luxury properties & premium brokerage services across Dubai</p>
-                    <div class="tall-division-tags">
-                        <span class="tall-tag">Property Sales</span>
-                        <span class="tall-tag">Management</span>
-                        <span class="tall-tag">Investment</span>
+                    <p class="division-desc">Luxury properties & premium brokerage services across Dubai</p>
+                    <div class="division-tags">
+                        <span class="tag">Property Sales</span>
+                        <span class="tag">Management</span>
+                        <span class="tag">Investment</span>
                     </div>
                 </div>
             </div>
             
             <!-- Health Care -->
-            <div class="tall-division-card healthcare-tall">
-                <div class="tall-division-overlay">
-                    <div class="tall-division-icon">
+            <div class="division-card" style="background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.95) 100%), url('https://images.unsplash.com/photo-1722235623200-59966a71af50?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+                <div class="division-overlay">
+                    <div class="division-icon">
                         <i class="fas fa-heartbeat"></i>
                     </div>
                     <h3>Health Care</h3>
-                    <p class="tall-division-desc">Premium medical services & facility management</p>
-                    <div class="tall-division-tags">
-                        <span class="tall-tag">Medical Facilities</span>
-                        <span class="tall-tag">Wellness</span>
-                        <span class="tall-tag">Specialist Care</span>
+                    <p class="division-desc">Premium medical services & facility management</p>
+                    <div class="division-tags">
+                        <span class="tag">Medical Facilities</span>
+                        <span class="tag">Wellness</span>
+                        <span class="tag">Specialist Care</span>
                     </div>
                 </div>
             </div>
             
             <!-- Manufacturing -->
-            <div class="tall-division-card manufacturing-tall">
-                <div class="tall-division-overlay">
-                    <div class="tall-division-icon">
+            <div class="division-card" style="background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.95) 100%), url('https://images.unsplash.com/photo-1735020886196-bed638cc1809?q=80&w=782&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+                <div class="division-overlay">
+                    <div class="division-icon">
                         <i class="fas fa-industry"></i>
                     </div>
                     <h3>Manufacturing</h3>
-                    <p class="tall-division-desc">Industrial solutions & warehousing across UAE</p>
-                    <div class="tall-division-tags">
-                        <span class="tall-tag">Production</span>
-                        <span class="tall-tag">Storage</span>
-                        <span class="tall-tag">Logistics</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Black Diamonds -->
-            <div class="tall-division-card diamonds-tall">
-                <div class="tall-division-overlay">
-                    <div class="tall-division-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3>Black Diamonds</h3>
-                    <p class="tall-division-desc">Exclusive luxury fashion & haute couture design</p>
-                    <div class="tall-division-tags">
-                        <span class="tall-tag">Haute Couture</span>
-                        <span class="tall-tag">Bespoke</span>
-                        <span class="tall-tag">Collections</span>
+                    <p class="division-desc">Exclusive luxury fashion & haute couture design</p>
+                    <div class="division-tags">
+                        <span class="tag">Production</span>
+                        <span class="tag">Storage</span>
+                        <span class="tag">Logistics</span>
                     </div>
                 </div>
             </div>
@@ -933,7 +736,7 @@
                 <div class="contact-details">
                     <div class="contact-detail">
                         <i class="fas fa-map-marker-alt"></i>
-                        <div>
+                        <div class="contact-detail-content">
                             <h4>Office Address</h4>
                             <p>Al Quoz, Dubai, UAE</p>
                         </div>
@@ -941,7 +744,7 @@
                     
                     <div class="contact-detail">
                         <i class="fas fa-phone"></i>
-                        <div>
+                        <div class="contact-detail-content">
                             <h4>Phone Number</h4>
                             <p>+971 4 123 4567</p>
                         </div>
@@ -949,18 +752,20 @@
                     
                     <div class="contact-detail">
                         <i class="fas fa-envelope"></i>
-                        <div>
+                        <div class="contact-detail-content">
                             <h4>Email Address</h4>
                             <p>info@binarabgroup.ae</p>
                         </div>
                     </div>
-                    
-                    <div class="contact-detail">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Working Hours</h4>
-                            <p>Sunday - Thursday: 9:00 AM - 6:00 PM</p>
-                        </div>
+                </div>
+                
+                <div class="social-media">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -979,7 +784,7 @@
                     
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="tel" id="phone" name="phone">
                     </div>
                     
                     <div class="form-group">
@@ -988,7 +793,6 @@
                             <option value="real-estate">Real Estate</option>
                             <option value="healthcare">Health Care</option>
                             <option value="manufacturing">Manufacturing</option>
-                            <option value="diamonds">Black Diamonds</option>
                             <option value="general">General Inquiry</option>
                         </select>
                     </div>
@@ -1006,76 +810,14 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <a href="#" class="footer-logo">Bin Arab Group</a>
-                <p class="footer-desc">
-                    A diversified conglomerate delivering excellence across multiple sectors in the UAE.
-                </p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+        <div class="footer-content">
+            <div class="copyright">
+                <p>&copy; 2023 Bin Arab Group. All Rights Reserved.</p>
             </div>
-            
-            <div class="footer-col">
-                <h3 class="footer-heading">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#property-hero">Home</a></li>
-                    <li><a href="#business-divisions">Business Divisions</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            
-            <!-- <div class="footer-col">
-                <h3 class="footer-heading">Business Divisions</h3>
-                <ul class="footer-links">
-                    <li><a href="#business-divisions">Real Estate</a></li>
-                    <li><a href="#business-divisions">Health Care</a></li>
-                    <li><a href="#business-divisions">Manufacturing</a></li>
-                    <li><a href="#business-divisions">Black Diamonds</a></li>
-                </ul>
-            </div> -->
-            
-            <div class="footer-col">
-                <h3 class="footer-heading">Contact Info</h3>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt"></i> Al Quoz, Dubai</li>
-                    <li><i class="fas fa-phone"></i> +971 4 123 4567</li>
-                    <li><i class="fas fa-envelope"></i> info@binarabgroup.ae</li>
-                    <li><i class="fas fa-clock"></i> Sun-Thu: 9AM-6PM</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; 2023 Bin Arab Group. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Fix hero section padding
-            const header = document.querySelector('header');
-            const hero = document.getElementById('property-hero');
-            
-            if (header && hero) {
-                const headerHeight = header.offsetHeight;
-                hero.style.paddingTop = headerHeight + 'px';
-                
-                window.addEventListener('resize', function() {
-                    const newHeight = header.offsetHeight;
-                    hero.style.paddingTop = newHeight + 'px';
-                });
-            }
-            
-            // Start counter animations
-            startCountersWhenVisible();
-        });
-
         // Mobile Menu Toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
@@ -1098,25 +840,14 @@
         // Background Image Slideshow
         let currentSlide = 0;
         const slides = document.querySelectorAll('.bg-slide');
-        const totalSlides = slides.length;
         
         function nextSlide() {
             slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % totalSlides;
+            currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }
         
-        let slideInterval = setInterval(nextSlide, 5000);
-        
-        // Pause slideshow on hover
-        const heroSection = document.getElementById('property-hero');
-        heroSection.addEventListener('mouseenter', () => {
-            clearInterval(slideInterval);
-        });
-        
-        heroSection.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(nextSlide, 5000);
-        });
+        setInterval(nextSlide, 5000);
         
         // Counter Animation
         function animateCounter(element) {
@@ -1129,7 +860,7 @@
             const timer = setInterval(() => {
                 current += step;
                 if (current >= target) {
-                    element.textContent = target + (element.nextElementSibling && element.nextElementSibling.textContent === '+' ? '+' : '');
+                    element.textContent = target;
                     clearInterval(timer);
                 } else {
                     element.textContent = Math.floor(current);
@@ -1143,12 +874,7 @@
             
             counters.forEach(counter => {
                 const rect = counter.getBoundingClientRect();
-                const isVisible = (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
+                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
                 
                 if (isVisible && parseInt(counter.textContent) === 0) {
                     animateCounter(counter);
@@ -1156,22 +882,15 @@
             });
         }
         
-        // Check counters on scroll
         window.addEventListener('scroll', startCountersWhenVisible);
+        window.addEventListener('load', startCountersWhenVisible);
         
         // Form Submission
         const contactForm = document.getElementById('contactForm');
         
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            
-            // Show success message
-            alert(`Thank you ${name}! We have received your inquiry and will contact you at ${email} shortly.`);
-            
-            // Reset form
+            alert('Thank you! We have received your inquiry and will contact you shortly.');
             contactForm.reset();
         });
         
@@ -1205,6 +924,16 @@
             } else {
                 header.style.padding = '1.5rem 5%';
                 header.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+        
+        // Set hero padding on load
+        window.addEventListener('load', function() {
+            const header = document.querySelector('header');
+            const hero = document.getElementById('hero');
+            
+            if (header && hero) {
+                hero.style.paddingTop = header.offsetHeight + 'px';
             }
         });
     </script>
