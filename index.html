@@ -3,8 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bin Arab Group | UAE's Diversified Conglomerate</title>
+    
+    <!-- SEO TITLE & DESCRIPTION -->
+    <title>Bin Arab Group | UAE's Premier Real Estate, Healthcare & Fashion Conglomerate</title>
+    <meta name="description" content="Bin Arab Group - 25+ years of excellence in UAE real estate, healthcare services, and luxury apparel creation. Trusted Dubai conglomerate with premium properties, medical facilities, and haute couture fashion.">
+    
+    <!-- KEYWORDS -->
+    <meta name="keywords" content="Bin Arab Group, UAE real estate, Dubai properties, healthcare Dubai, fashion manufacturing, luxury properties Dubai, medical facilities UAE, haute couture Dubai, apparel creation, business conglomerate UAE">
+    
+    <!-- OPEN GRAPH / SOCIAL MEDIA -->
+    <meta property="og:title" content="Bin Arab Group | UAE's Premier Diversified Conglomerate">
+    <meta property="og:description" content="25+ years of excellence in real estate, healthcare, and luxury fashion across UAE">
+    <meta property="og:image" content="https://github.com/kiran-saju/ARABREST/blob/main/logo.png?raw=true">
+    <meta property="og:url" content="https://kiran-saju.github.io/ARABREST/">
+    <meta property="og:type" content="website">
+    
+    <!-- TWITTER CARDS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bin Arab Group | UAE's Premier Business Conglomerate">
+    <meta name="twitter:description" content="Real estate, healthcare & fashion excellence across UAE">
+    
+    <!-- CANONICAL URL -->
+    <link rel="canonical" href="https://kiran-saju.github.io/ARABREST/">
+    
+    <!-- SCHEMA STRUCTURED DATA (VERY IMPORTANT) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Bin Arab Group",
+        "alternateName": "Bin Arab",
+        "url": "https://kiran-saju.github.io/ARABREST/",
+        "logo": "https://github.com/kiran-saju/ARABREST/blob/main/logo.png?raw=true",
+        "description": "UAE's premier diversified conglomerate with 25+ years in real estate, healthcare, and luxury apparel creation",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Al Quoz",
+            "addressLocality": "Dubai",
+            "addressRegion": "Dubai",
+            "addressCountry": "UAE"
+        },
+        "telephone": "+971-4-123-4567",
+        "email": "info@binarabgroup.ae",
+        "founder": "Bin Arab Group",
+        "foundingDate": "1998",
+        "sameAs": []
+    }
+    </script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    
     <style>
         * {
             margin: 0;
@@ -357,71 +406,95 @@
             border-color: rgba(193, 154, 91, 0.3);
         }
 
-        /* Contact Section */
+     /* Contact Section */
         #contact {
-            padding: 4rem 5%;
+            padding: 5rem 5%;
             background: #111;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1100px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 4rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
             color: #fff;
+            font-weight: 800;
+        }
+
+        .contact-info > p {
+            color: #bbb;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
         }
 
         .contact-details {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .contact-detail {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
+            gap: 1.2rem;
+            margin-bottom: 1.8rem;
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-detail:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(193, 154, 91, 0.2);
+            transform: translateX(5px);
         }
 
         .contact-detail i {
             color: #c19a5b;
-            font-size: 1.2rem;
-            width: 25px;
-            margin-top: 3px;
+            font-size: 1.4rem;
+            width: 30px;
+            margin-top: 5px;
+            flex-shrink: 0;
         }
 
         .contact-detail-content h4 {
-            font-size: 1rem;
-            margin-bottom: 0.2rem;
+            font-size: 1.15rem;
+            margin-bottom: 0.3rem;
             color: #c19a5b;
+            font-weight: 700;
         }
 
         .contact-detail-content p {
             color: #ddd;
-            line-height: 1.5;
-            font-size: 0.95rem;
+            line-height: 1.6;
+            font-size: 1rem;
         }
 
         .contact-form {
             background: #1a1a1a;
-            padding: 1.8rem;
-            border-radius: 8px;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
 
         .form-group {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
             color: #fff;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.95rem;
         }
 
@@ -429,13 +502,13 @@
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 0.8rem;
+            padding: 1rem;
             background: #222;
             border: 1px solid #333;
-            border-radius: 4px;
+            border-radius: 6px;
             color: #fff;
-            font-size: 0.95rem;
-            transition: border 0.3s ease;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
         .form-group input:focus,
@@ -443,29 +516,41 @@
         .form-group select:focus {
             outline: none;
             border-color: #c19a5b;
+            box-shadow: 0 0 0 3px rgba(193, 154, 91, 0.2);
+            background: #252525;
         }
 
         .form-group textarea {
-            height: 120px;
+            height: 130px;
             resize: vertical;
         }
 
         .btn-submit {
-            background: #c19a5b;
+            background: linear-gradient(45deg, #c19a5b, #d4af6a);
             color: #000;
             border: none;
-            padding: 0.9rem 1.8rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 4px;
+            padding: 1.1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
+            margin-top: 0.5rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(193, 154, 91, 0.3);
         }
 
         .btn-submit:hover {
-            background: #d4af6a;
+            background: linear-gradient(45deg, #d4af6a, #e6c28c);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(193, 154, 91, 0.4);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
         }
 
         /* Footer */
@@ -756,7 +841,7 @@
                     <div class="division-tags">
                         <span class="tag">Property Sales</span>
                         <span class="tag">Management</span>
-                        <span class="tag">Development</span>
+                        <span class="tag">Investment</span>
                     </div>
                 </div>
             </div>
@@ -795,27 +880,31 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+       <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title">Contact Us</h2>
+        <h2 class="section-title">Contact Bin Arab Group UAE</h2>
+        <p class="section-subtitle">
+            Get in touch with our expert team across all business divisions in Dubai and UAE.
+        </p>
+        
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Get In Touch</h3>
-                <p>Connect with our expert team across all business divisions.</p>
+                <h3>Bin Arab Group UAE Offices</h3>
+                <p>Connect with our expert team across all business divisions in Dubai and United Arab Emirates.</p>
                 
                 <div class="contact-details">
                     <div class="contact-detail">
                         <i class="fas fa-map-marker-alt"></i>
                         <div class="contact-detail-content">
-                            <h4>Office Address</h4>
-                            <p>Al Quoz, Dubai, UAE</p>
+                            <h4>Dubai Office Address</h4>
+                            <p>Al Quoz Industrial Area, Dubai, United Arab Emirates</p>
                         </div>
                     </div>
                     
                     <div class="contact-detail">
                         <i class="fas fa-phone"></i>
                         <div class="contact-detail-content">
-                            <h4>Phone Number</h4>
+                            <h4>UAE Phone Number</h4>
                             <p>+971 50 507 7162</p>
                         </div>
                     </div>
@@ -827,71 +916,68 @@
                             <p>info@binarabgroup.ae</p>
                         </div>
                     </div>
-                </div>
-                
-                <!-- <div class="social-media">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-detail-content">
+                            <h4>UAE Working Hours</h4>
+                            <p>Sunday - Thursday: 9:00 AM - 6:00 PM GST</p>
+                        </div>
                     </div>
-                </div> -->
+                </div>
             </div>
             
             <div class="contact-form">
-    <form id="contactForm" action="https://formspree.io/f/mlgdrgnz" method="POST">
-        <!-- Add this hidden field to identify form submissions -->
-        <input type="hidden" name="_form" value="Bin Arab Group Contact Form">
-        
-        <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone">
-        </div>
-        
-        <div class="form-group">
-            <label for="interest">Business Interest</label>
-            <select id="interest" name="interest">
-                <option value="real-estate">Real Estate</option>
-                <option value="healthcare">Health Care</option>
-                <option value="apparel">Apparel Creation</option>
-                <option value="general">General Inquiry</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us about your requirements..." required></textarea>
-        </div>
-        
-        <!-- Formspree hidden fields - CORRECTED -->
-        <input type="hidden" name="_subject" value="New Contact Form Submission - Bin Arab Group">
-        <input type="hidden" name="_next" value="https://kiran-saju.github.io/ARABREST/">
-        <input type="hidden" name="_replyto" value="email"> <!-- Points to email field -->
-        <input type="hidden" name="_language" value="en">
-        
-        <!-- Optional: Honeypot spam prevention -->
-        <input type="text" name="_gotcha" style="display:none">
-        
-        <button type="submit" class="btn-submit">Send Message</button>
-    </form>
-</div>
-   
-
-
+                <form id="contactForm" action="https://formspree.io/f/mlgdrgnz" method="POST">
+                    <!-- Form identification -->
+                    <input type="hidden" name="_form" value="Bin Arab Group UAE Contact Form">
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">Business Interest</label>
+                        <select id="interest" name="interest" required>
+                            <option value="real-estate">Real Estate Dubai</option>
+                            <option value="healthcare">Healthcare UAE</option>
+                            <option value="apparel">Apparel Creation</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message / Requirements</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your requirements for UAE/Dubai..." required></textarea>
+                    </div>
+                    
+                    <!-- Formspree configuration -->
+                    <input type="hidden" name="_subject" value="Bin Arab Group UAE Contact Form Submission">
+                    <input type="hidden" name="_next" value="https://kiran-saju.github.io/ARABREST/#contact">
+                    <input type="hidden" name="_replyto" value="email">
+                    <input type="hidden" name="_language" value="en">
+                    
+                    <!-- Honeypot for spam -->
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1">
+                    
+                    <button type="submit" class="btn-submit">Send Message to Bin Arab Group</button>
+                </form>
+            </div>
         </div>
     </section>
+
+ 
 
     <!-- Footer -->
     <footer>
