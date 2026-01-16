@@ -244,7 +244,7 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             margin-bottom: 2.5rem;
             max-width: 900px;
@@ -253,7 +253,11 @@
             line-height: 1.6;
             font-weight: 800;
         }
-
+ .highlight-bg {
+    background-color: rgba(193, 154, 91, 0.3); /* 0.15 = 15% opacity */
+    border-radius: 10px;
+    /* padding: 1rem 1.5rem;  */
+}
         .hero-stats {
             display: flex;
             gap: clamp(1rem, 3vw, 2.5rem);
@@ -791,12 +795,11 @@
         <div class="hero-content">
             <h1 class="hero-title">BIN ARAB GROUP</h1>
             <div class="hero-divider"></div>
-            <p class="hero-subtitle">
+            <p class="hero-subtitle highlight-bg">
                 With 25 years of excellence, Bin Arab is a trusted name across real estate, fashion designing, and healthcare.<br>
                 Our commitment to quality and innovation drives every branch, delivering exceptional services to our clients.<br>
                 Guided by strong values and industry expertise, we strive to create meaningful impact in every sector we serve. <br>
                 Our commitment to excellence ensures reliable growth and long-term partnerships.<br>
-                Experience the legacy of expertise and dedication with Bin Arab
             </p>
             
             <div class="hero-stats">
